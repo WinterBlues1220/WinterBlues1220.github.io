@@ -1,16 +1,9 @@
-body {
-    font-family: sans-serif;
-    transition: background 0.3s, color 0.3s;
-    padding: 20px;
+ion-icon {
+    font-size: 24px; 
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-body.dark {
-    background: #333;
-    color: #fff;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body.dark ion-icon {
+    color: #ffcc00;
 }
