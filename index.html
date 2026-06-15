@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>黃宗浩的個人網頁</title>
     <link rel="stylesheet" href="style.css">
-    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 
-<header>
-    <div class="name-banner-container">
-        <h2 class="personal-name">黃宗浩 (WinterBlues)</h2>
-        <img src="personal-banner.jpg" alt="個人網頁橫幅" class="personal-banner">
-    </div>
-    <button id="theme-toggle" class="theme-btn" aria-label="切換深淺色模式">
-        <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
-    </button>
-</header>
+    <header>
+        <h1>黃宗浩 (WinterBlues)</h1>
+        <button id="theme-toggle" class="theme-btn" aria-label="切換深淺色模式">
+            <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
+        </button>
+    </header>
 
     <main>
         <section id="about">
             <h2>關於我</h2>
-            <p>歡迎來到我的個人網站！我是亞洲大學資訊工程學系的學生</p>
+            <p>歡迎來到我的個人網站！我是亞洲大學資訊工程學系的學生。</p>
         </section>
         
         <section id="projects">
@@ -32,6 +28,10 @@
             <ul id="project-list">
             </ul>
         </section>
+
+        <div class="bottom-image-container">
+            <img src="personal-banner.jpg" alt="風景圖片" class="bottom-right-img">
+        </div>
     </main>
 
     <script src="script.js"></script>
