@@ -1,0 +1,16 @@
+body {
+    font-family: sans-serif;
+    transition: background 0.3s, color 0.3s;
+    padding: 20px;
+}
+
+body.dark {
+    background: #333;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
