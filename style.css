@@ -1,9 +1,46 @@
-ion-icon {
-    font-size: 24px; 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+body.dark header {
+    border-bottom: 1px solid #444444;
+}
+
+.theme-btn {
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: color 0.3s;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-icon {
+    font-size: 28px;
+    color: #555555;
+    transition: color 0.3s ease;
 }
 
 body.dark ion-icon {
-    color: #ffcc00;
+    color: #ffcc00; 
 }
