@@ -44,30 +44,38 @@ ion-icon {
 body.dark ion-icon {
     color: #ffcc00; 
 }
+/* 頁首區塊排版：移除上下 padding，設定固定高度以利圖片切齊 */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #dddddd;
-    padding: 10px 20px; /* 調整內距 */
+    padding: 0; /* 歸零，讓圖片能緊貼上下邊緣 */
+    height: 90px; /* 增加頁首高度，解決圖片太小的問題 */
     margin-bottom: 20px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 body.dark header {
+    background-color: #222222;
     border-bottom: 1px solid #444444;
 }
 
+/* 名字與橫幅容器 */
 .name-banner-container {
     display: flex;
     align-items: center;
-    flex-grow: 1; 
-    max-width: 60%; 
+    flex-grow: 1;
+    height: 100%; /* 繼承頁首高度 */
+    padding-left: 20px; /* 補回名字左側的留白 */
 }
 
+/* 名字樣式 */
 .personal-name {
     font-size: 24px;
     margin: 0;
-    margin-right: 20px
+    white-space: nowrap; /* 確保名字不會因為空間壓縮而換行 */
     color: #333333;
     transition: color 0.3s ease;
 }
@@ -76,16 +84,41 @@ body.dark .personal-name {
     color: #ffffff;
 }
 
+/* 橫幅圖片樣式 */
 .personal-banner {
-    height: 3em; 
-    flex-grow: 1;
-    object-fit: cover;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    height: 100%; /* 高度填滿 100%，完美切齊上下框線 */
+    width: 100%;
+    max-width: 500px; /* 控制圖片最大寬度，避免在寬螢幕上無限拉長 */
+    object-fit: cover; /* 確保高寬比正確裁切 */
+    margin-left: auto; /* 核心屬性：將圖片往右側推 */
+    margin-right: 20px; /* 與右側按鈕保持視覺間距 */
+    border-radius: 0; /* 去除圓角 */
+    border: none; /* 去除外框線 */
     transition: filter 0.3s ease;
 }
 
+/* 深色模式下的橫幅調整 */
 body.dark .personal-banner {
     filter: brightness(0.8) contrast(1.1);
-    border: 1px solid #555;
+}
+
+/* 切換按鈕樣式：補回右側的留白 */
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 20px 0 0; /* 右側加入 20px 留白，其餘為 0 */
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+ion-icon {
+    font-size: 28px;
+    color: #555555;
+    transition: color 0.3s ease;
+}
+
+body.dark ion-icon {
+    color: #ffcc00;
 }
