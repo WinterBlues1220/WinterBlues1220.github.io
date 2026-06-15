@@ -73,3 +73,45 @@ body.dark ion-icon {
 body.dark .bottom-right-img {
     filter: brightness(0.85);
 }
+/* --- 內容區塊排版 (文字在左，圖片在右) --- */
+.content-wrapper {
+    display: flex;
+    align-items: flex-start; /* 讓文字和圖片對齊頂部 */
+    gap: 40px; /* 控制文字與圖片之間的間距 */
+}
+
+#introduction {
+    flex: 1; /* 讓文字區塊佔滿左側剩餘空間 */
+}
+
+/* 圖片容器樣式 */
+.side-image-container {
+    flex: 0 0 400px; /* 固定圖片區塊的寬度為 400px，你可以依喜好調整這個數字 */
+    padding-top: 15px; /* 稍微往下推一點，視覺上會跟標題比較對齊 */
+}
+
+.side-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* 增加一點圓角讓視覺更柔和 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 增加陰影提升立體感 */
+    transition: filter 0.3s ease;
+}
+
+body.dark .side-img {
+    filter: brightness(0.85); /* 深色模式調暗圖片 */
+}
+
+/* --- 手機版響應式設計 (當螢幕寬度小於 768px 時觸發) --- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* 改為由上往下排列 */
+        gap: 20px;
+    }
+    
+    .side-image-container {
+        flex: auto;
+        width: 100%; /* 圖片寬度改為佔滿螢幕 */
+        padding-top: 0;
+    }
+}
