@@ -1,3 +1,4 @@
+/* --- 基礎全域設定 --- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,6 +13,7 @@ body.dark {
     color: #ffffff;
 }
 
+/* --- 頁首區塊排版 (已還原) --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -25,6 +27,12 @@ body.dark header {
     border-bottom: 1px solid #444444;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* --- 切換按鈕與圖示 --- */
 .theme-btn {
     background: none;
     border: none;
@@ -42,83 +50,26 @@ ion-icon {
 }
 
 body.dark ion-icon {
-    color: #ffcc00; 
+    color: #ffcc00;
 }
-/* 頁首區塊排版：移除上下 padding，設定固定高度以利圖片切齊 */
-header {
+
+/* --- 新增：下方右側圖片樣式 --- */
+.bottom-image-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #dddddd;
-    padding: 0; /* 歸零，讓圖片能緊貼上下邊緣 */
-    height: 90px; /* 增加頁首高度，解決圖片太小的問題 */
-    margin-bottom: 20px;
-    background-color: #ffffff;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    justify-content: flex-end; /* 將圖片推至容器最右側 */
+    margin-top: 50px; /* 與上方專案列表保持距離 */
 }
 
-body.dark header {
-    background-color: #222222;
-    border-bottom: 1px solid #444444;
-}
-
-/* 名字與橫幅容器 */
-.name-banner-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    height: 100%; /* 繼承頁首高度 */
-    padding-left: 20px; /* 補回名字左側的留白 */
-}
-
-/* 名字樣式 */
-.personal-name {
-    font-size: 24px;
-    margin: 0;
-    white-space: nowrap; /* 確保名字不會因為空間壓縮而換行 */
-    color: #333333;
-    transition: color 0.3s ease;
-}
-
-body.dark .personal-name {
-    color: #ffffff;
-}
-
-/* 橫幅圖片樣式 */
-.personal-banner {
-    height: 100%; /* 高度填滿 100%，完美切齊上下框線 */
+.bottom-right-img {
     width: 100%;
-    max-width: 500px; /* 控制圖片最大寬度，避免在寬螢幕上無限拉長 */
-    object-fit: cover; /* 確保高寬比正確裁切 */
-    margin-left: auto; /* 核心屬性：將圖片往右側推 */
-    margin-right: 20px; /* 與右側按鈕保持視覺間距 */
-    border-radius: 0; /* 去除圓角 */
-    border: none; /* 去除外框線 */
+    max-width: 500px; /* 控制圖片最大寬度，避免過大 */
+    height: auto; /* 保持原圖比例 */
+    border-radius: 4px; /* 加入微小的圓角修飾邊緣 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加陰影提升立體感 */
     transition: filter 0.3s ease;
 }
 
-/* 深色模式下的橫幅調整 */
-body.dark .personal-banner {
-    filter: brightness(0.8) contrast(1.1);
-}
-
-/* 切換按鈕樣式：補回右側的留白 */
-.theme-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0 20px 0 0; /* 右側加入 20px 留白，其餘為 0 */
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-ion-icon {
-    font-size: 28px;
-    color: #555555;
-    transition: color 0.3s ease;
-}
-
-body.dark ion-icon {
-    color: #ffcc00;
+/* 深色模式下降低圖片亮度，視覺較為柔和 */
+body.dark .bottom-right-img {
+    filter: brightness(0.85);
 }
