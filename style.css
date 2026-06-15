@@ -44,3 +44,48 @@ ion-icon {
 body.dark ion-icon {
     color: #ffcc00; 
 }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px; /* 調整內距 */
+    margin-bottom: 20px;
+}
+
+body.dark header {
+    border-bottom: 1px solid #444444;
+}
+
+.name-banner-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+    max-width: 60%; 
+}
+
+.personal-name {
+    font-size: 24px;
+    margin: 0;
+    margin-right: 20px
+    color: #333333;
+    transition: color 0.3s ease;
+}
+
+body.dark .personal-name {
+    color: #ffffff;
+}
+
+.personal-banner {
+    height: 3em; 
+    flex-grow: 1;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: filter 0.3s ease;
+}
+
+body.dark .personal-banner {
+    filter: brightness(0.8) contrast(1.1);
+    border: 1px solid #555;
+}
